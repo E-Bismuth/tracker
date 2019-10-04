@@ -17,11 +17,11 @@ class Session extends Repository
 
     protected $relations = ['device', 'user', 'log', 'language', 'agent', 'referer', 'geoIp', 'cookie'];
 
-    public function __construct($model, Config $config, PhpSession $session)
+    public function __construct($model, Config $config)
     {
         $this->config = $config;
 
-        $this->session = $session;
+        $this->session = session();
 
         parent::__construct($model);
     }
